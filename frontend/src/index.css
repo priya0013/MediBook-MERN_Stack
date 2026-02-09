@@ -1,0 +1,285 @@
+/* ============================================
+   GLOBAL STYLES & CSS VARIABLES
+   ============================================ */
+
+:root {
+  /* Colors - Medical Theme */
+  --primary-color: #00A896;        /* Teal - main brand color */
+  --secondary-color: #E6F7F5;     /* Light Teal - cards & sections */
+  --success-color: #43A047;       /* Soft Green - confirmation & success */
+  --warning-color: #f59e0b;       /* Amber - warnings */
+  --danger-color: #ef4444;        /* Red - critical actions */
+  --dark-color: #0B3D3A;          /* Deep Teal - primary text */
+  --light-color: #FFFFFF;         /* White - clean background */
+  --border-color: #E0E0E0;        /* Light Gray - borders */
+  --text-color: #0B3D3A;          /* Deep Teal - body text */
+  --text-light: #5F7A78;          /* Muted Teal - secondary text */
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 50%;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition: all 0.3s ease;
+}
+
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================================
+   COMMON COMPONENTS STYLES
+   ============================================ */
+
+/* Buttons */
+.btn-primary,
+.btn-secondary,
+.btn-success,
+.btn-cancel,
+.btn-reschedule,
+.book-btn,
+.auth-button {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #008C7A;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background-color: #6b7280;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #4b5563;
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #16a34a;
+}
+
+.btn-cancel {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.btn-cancel:hover {
+  background-color: #dc2626;
+}
+
+.book-btn,
+.auth-button {
+  background-color: var(--primary-color);
+  color: white;
+  width: 100%;
+  padding: var(--spacing-md);
+  font-size: 16px;
+  margin-top: var(--spacing-md);
+}
+
+.book-btn:hover,
+.auth-button:hover {
+  background-color: #008C7A;
+}
+
+/* Forms */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 168, 150, 0.1);
+}
+
+input.input-error {
+  border-color: var(--danger-color);
+}
+
+input.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Error and Success Messages */
+.error-message,
+.error-text {
+  color: var(--danger-color);
+  font-size: 13px;
+  margin-top: var(--spacing-sm);
+}
+
+.success-message {
+  background-color: #dcfce7;
+  color: #15803d;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
+  border-left: 4px solid var(--success-color);
+}
+
+/* Cards */
+.service-card,
+.appointment-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-confirmed {
+  background-color: #dbeafe;
+  color: #4fbaf4;
+}
+
+.status-completed {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.status-cancelled {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.status-pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+
+.text-center {
+  text-align: center;
+}
+
+.mt-md {
+  margin-top: var(--spacing-md);
+}
+
+.mb-md {
+  margin-bottom: var(--spacing-md);
+}
+
+.my-lg {
+  margin: var(--spacing-lg) 0;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 24px;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .services-grid,
+  .appointments-grid,
+  .features-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  input,
+  textarea {
+    padding: var(--spacing-sm);
+  }
+
+  button {
+    padding: var(--spacing-md) var(--spacing-sm);
+    font-size: 13px;
+  }
+}

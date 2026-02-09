@@ -1,0 +1,114 @@
+/* ============================================
+   APP MAIN STYLES
+   ============================================ */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  background-color: var(--light-color);
+}
+
+/* Container Styling */
+@media (max-width: 768px) {
+  .app {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app {
+    font-size: 13px;
+  }
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-size: 18px;
+  color: var(--text-light);
+}
+
+.loading::after {
+  content: '';
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  0% { content: '|'; }
+  25% { content: '/'; }
+  50% { content: '-'; }
+  75% { content: '\\'; }
+}
+
+/* Error Page */
+.error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  text-align: center;
+}
+
+.error-page h1 {
+  font-size: 48px;
+  color: var(--danger-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.error-page p {
+  font-size: 18px;
+  color: var(--text-light);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8fc5fa;
+}
