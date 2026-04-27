@@ -1,0 +1,10 @@
+aws_region        = "ap-south-1"
+project_name      = "medibook"
+environment       = "shared"
+state_bucket_name = "medibook-terraform-state-unique-suffix"
+lock_table_name   = "medibook-terraform-locks"
+
+tags = {
+  Project   = "medibook"
+  ManagedBy = "Terraform"
+}
